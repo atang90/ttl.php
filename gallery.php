@@ -35,7 +35,7 @@
 
             <div class="thumbnails">
               <a href="<?php echo $value ;?>" data-fancybox="images" data-caption="My caption">
-                <img src="<?php echo $value ;?>" alt="<?php echo $value ;?>">
+                <img src="<?= $value?>" alt="<?php echo $value ;?>">
               </a>
             </div>
 
