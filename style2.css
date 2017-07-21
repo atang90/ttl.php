@@ -1,0 +1,28 @@
+body{
+  margin: 0;
+  padding: 0;
+  background: #ccc;
+  display: flex;
+  min-height: 100vh;
+  flex-direction: column;
+}
+
+main{
+  width: 80%;
+  margin: 0px auto;
+  flex: 1 0 auto;
+}
+
+.thumbnails{
+  width: 30%;
+  float: left;
+  margin; 10px;
+  background: #fff;
+  padding: 20px;
+  box-sizing: border-box;
+}
+
+.thumbnails img{
+  width: 100%;
+  height: auto;
+}
