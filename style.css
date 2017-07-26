@@ -4,7 +4,7 @@ body{
   flex-direction: column;
   margin: 0;
   padding: 0;
-  background: #ccc;
+  background: #FEFEFA/*#ccc;*/
 }
 
 main{
@@ -13,7 +13,7 @@ main{
   margin: 0px auto;
 }
 
-.thumbnails{
+/*.thumbnails{
   width: 30%;
   float: left;
   margin: 15px;
@@ -25,4 +25,63 @@ main{
 .thumbnails img{
   width: 100%;
   height: auto;
+}*/
+
+.thumbnails {
+  position: relative;
+  width: 200px;
+  height: 200px;
+  overflow: hidden;
+  float: left;
+  margin: 15px;
 }
+
+.thumbnails img {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  height: 100%;
+  width: auto;
+  -webkit-transform: translate(-50%,-50%);
+      -ms-transform: translate(-50%,-50%);
+          transform: translate(-50%,-50%);
+}
+/*.thumbnail img.portrait {
+  width: 100%;
+  height: auto;
+}*/
+
+/*.header-image {
+			/*background-image: url(~Andrew/Projects/angular/img/CropHeroImg2.jpg);
+			display: block;
+		}*/
+
+    .header-image {
+  background: linear-gradient(
+                         rgba(20,20,20,0.5),
+                         rgba(20,20,20,0.5)),
+                         url(../img/CropHeroImg2.jpg);
+  /*background-image: url(../img/CropHeroImg2.jpg);*/
+  background-size: cover;
+  background-position:center;
+  display:block;
+}
+
+/*header {
+    background-image: url(img/hero.jpg);
+    background-size: cover;
+    background-position:center;
+    height: 100%;
+    width: 100%;
+    position: fixed;
+}*/
+
+		@media only screen and (max-width: 1024px) {
+			.header-inner {
+				display: block;
+			}
+			.header-image {
+				background-image: none;
+				height: auto !important;
+			}
+		}
