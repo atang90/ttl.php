@@ -1,56 +1,51 @@
 <!DOCTYPE html>
 <html lang="en">
+
   <head>
 
-    <!-- /// Meta tags ///-->
-    <meta id='viewport' name="viewport" content="maximum-scale=1.0, initial-scale=1.0">
-    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="description" content="Throughthelens is a gallery of the photographs I have taken since 2016.">
-    <meta name="keywords" content="Photography, photo, gallery">
-
-    <!-- /// Import Materialize ///-->
-    <!--Import Google Icon Font=-->
-    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css?family=Raleway:300,400,400i,700|Ubuntu:300,400,700" rel="stylesheet">
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.99.0/css/materialize.min.css" rel="stylesheet">
-
-    <!--Import materialize.css-->
-    <link type="text/css" rel="stylesheet" href="css/materialize.min.css"  media="screen,projection">
-    <link type="text/css" rel="stylesheet" href="css/style2.css"  media="screen,projection">
-    <link type="text/css" rel="stylesheet" href="css/jquery.fancybox.min.css" media="screen,projection">
+    <?php include "/Users/Andrew/Sites/Projects/angular/inc/header.php";?>
+    <title><?php print $_SERVER['SERVER_NAME'] . " - Gallery" ?></title>
 
   </head>
 
   <body>
-      <main>
-        <h2><b>Image Gallery</b></h2>
-        <?php
 
-            $dir = glob ('Img/{*.jpg}', GLOB_BRACE);
-            foreach ($dir as $value)
-            {
+    <?php include "/Users/Andrew/Sites/Projects/angular/inc/navbar.php";?>
 
-            ?>
+    <!-- /// Hero Image /// -->
+    <div class="header-image">
+			<div class="overlay"></div>
+      <img class="header-inner" height="500" width="1920">
+		</div>
 
-            <div class="thumbnails">
-              <a href="<?php echo $value ;?>" data-fancybox="images" data-caption="My caption">
-                <img src="<?= $value?>" alt="<?php echo $value ;?>">
-              </a>
-            </div>
+    <!-- /// ContentBody /// -->
+    <main>
+      <h2><b>Gallery</b></h2>
 
-            <?php
+      <!-- /// Dynamically import images from "/Img/*" with php /// -->
+      <?php
+          $dir = GLOB('Img/{*.jpg,*.JPG, *.jpeg, *.JPEG}', GLOB_BRACE);
+          foreach ($dir as $value)
+          {
+      ?>
 
-            }
+          <div class="thumbnails col s12 m6 l4">
+            <a href="<?php echo $value ;?>" data-fancybox="images" data-caption="">
+              <img src="<?php echo $value ;?>" alt="<?php echo $value ;?>">
+            </a>
+          </div>
 
-            ?>
-      </main>
+          <?php
+          }
+          ?>
+    </main>
+
   </body>
 
-  <!-- /// Import jQuery before materialize.js /// -->
-  <script src="https://code.jquery.com/jquery-2.2.4.js"></script>
-  <script type="text/javascript" src="css/jquery.fancybox.min.js"></script>
-  <script type="text/javascript" src="js/materialize.min.js"></script>
-  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.99.0/js/materialize.min.js"></script>
+  <footer>
+
+    <?php include "/Users/Andrew/Sites/Projects/angular/inc/footer.php";?>
+
+  </footer>
 
 </html>
